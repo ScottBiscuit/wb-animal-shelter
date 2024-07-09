@@ -28,4 +28,17 @@ class AnimalShelter {
         const animalIndex = this.animals.indexOf(animal);
         this.animals.splice(animalIndex, 1);
     }
+    getAnimalsBySpecies(species){
+        return this.animals.filter(a => a.species === species);
+    }
 }
+
+const shelter = new AnimalShelter();
+
+for (const a of animalData){
+    const hunger = a.hunger ? a.hunger : 50;
+    const animal = new Animal(a.name, a.species, a.color, hunger);
+    shelter.addAnimal(animal)
+}
+
+console.log(shelter.getAnimalsBySpecies('cat'))
