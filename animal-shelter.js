@@ -16,6 +16,33 @@ class Animal {
     }
 }
 
+class Cat extends Animal {
+    constructor(name, color, hunger = 50) {
+        super(name, 'cat', color, hunger);
+        this.food = 'fish';
+    }
+    greet(){
+        console.log(`Meooowww, I'm ${this.name} the adorable ${this.species}!`)
+    }
+    feed(){
+        this.hunger -= 20;
+        console.log(`Yum, I love ${this.food}!`);
+    }
+}
+class Dog extends Animal {
+    constructor(name, color, hunger = 50) {
+        super(name, 'dog', color, hunger);
+        this.food = 'kibble';
+    }
+    greet(){
+        console.log(`Woof, I'm ${this.name} the ${this.species}!`)
+    }
+    feed(){
+        this.hunger -= 20;
+        console.log(`Yum, I love ${this.food}!`);
+    }
+}
+
 class AnimalShelter {
     constructor(){
         this.animals = [];
