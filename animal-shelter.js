@@ -63,8 +63,15 @@ class AnimalShelter {
 const shelter = new AnimalShelter();
 
 for (const a of animalData){
+    let animal;
     const hunger = a.hunger ? a.hunger : 50;
-    const animal = new Animal(a.name, a.species, a.color, hunger);
+    if (a.species === 'dog'){
+        animal = new Dog(a.name, a.color, hunger);
+    } else if (a.species === 'cat'){
+        animal = new Cat(a.name, a.color, hunger);
+    } else {
+        animal = new Animal(a.name, a.species, a.color, hunger);
+    }
     shelter.addAnimal(animal)
 }
 
